@@ -1,0 +1,122 @@
+:root {
+    --accent-color: #ffb2b2;
+    --background-color: #ffffff;
+    --circle-color: #ff6b6b;
+    --divider-color: #dadada;
+    --text-color: #2a2a2a;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    align-items: center;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Bitter';
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: .4px;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+    justify-content: center;
+    text-rendering: optimizeLegibility;
+  }
+  
+  figure, svg {
+    overflow: visible;
+  }
+  
+  @keyframes grow {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.7;
+      stroke: var(--circle-color);
+    }
+    50% {
+      transform: scale(1.8);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(3.2);
+      opacity: 0;
+      stroke: var(--accent-color);
+    }
+  }
+  
+  circle {
+    animation: grow 5s alternate infinite cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
+    stroke-width: 3;
+    stroke: var(--circle-color);
+    transform-origin: center center;
+  }
+  
+  circle:nth-child(1) {
+    animation-delay: -0.5s;
+  }
+  
+  circle:nth-child(2) {
+    animation-delay: -2s;
+  }
+  
+  circle:nth-child(3) {
+    animation-delay: -4s;
+  }
+  
+  circle:nth-child(4) {
+    animation-delay: -6s;
+  }
+  
+  circle:nth-child(5) {
+    animation-delay: -3s;
+  }
+  
+  main {
+    padding: 40px;
+    width: 420px;
+    max-width: 95vw;
+  }
+  
+  a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    border-bottom: 1px solid var(--accent-color);
+    filter: brightness(60%);
+  }
+  
+  h1 {
+    letter-spacing: 1px;
+    margin-top: 0;
+    padding-left: 2px;
+  }
+  
+  .actions-container {
+    align-items: center;
+    border-top: 1px solid var(--divider-color);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-top: 2em;
+  }
+  
+  .icons a {
+    border-bottom: 0;
+    margin-right: 10px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .resume a {
+    font-size: 0.8em;
+  }
+  
