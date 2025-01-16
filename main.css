@@ -42,8 +42,8 @@
       opacity: 0.5;
     }
     100% {
-      transform: scale(0.8);
-      opacity: 0;
+      transform: scale(0.5);
+      opacity: 0.1;
       stroke: var(--accent-color);
     }
   }
