@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>k9 babies</title>
+    <title>Responsive Video</title>
     <style>
         * {
             margin: 0;
@@ -26,9 +26,27 @@
     </style>
 </head>
 <body>
-    <video autoplay loop>
+    <video id="video" autoplay loop playsinline>
         <source src="nice-3.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <audio id="audio" autoplay loop>
+        <source src="fortnite.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('video');
+            const audio = document.getElementById('audio');
+            
+            video.play().catch(() => {
+                document.addEventListener('click', () => video.play(), { once: true });
+            });
+            
+            audio.play().catch(() => {
+                document.addEventListener('click', () => audio.play(), { once: true });
+            });
+        });
+    </script>
 </body>
 </html>
