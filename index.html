@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Video</title>
+    <title>k9 babies</title>
     <style>
         * {
             margin: 0;
@@ -35,18 +35,17 @@
         Your browser does not support the audio element.
     </audio>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        window.onload = () => {
             const video = document.getElementById('video');
             const audio = document.getElementById('audio');
             
-            video.play().catch(() => {
-                document.addEventListener('click', () => video.play(), { once: true });
-            });
+            const playMedia = () => {
+                video.play().catch(err => console.warn('Video play failed:', err));
+                audio.play().catch(err => console.warn('Audio play failed:', err));
+            };
             
-            audio.play().catch(() => {
-                document.addEventListener('click', () => audio.play(), { once: true });
-            });
-        });
+            playMedia();
+        };
     </script>
 </body>
 </html>
