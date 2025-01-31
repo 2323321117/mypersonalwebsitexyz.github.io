@@ -26,26 +26,23 @@
     </style>
 </head>
 <body>
-    <video id="video" autoplay loop playsinline>
+    <video id="video" loop playsinline>
         <source src="nice-3.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <audio id="audio" autoplay loop>
+    <audio id="audio" loop>
         <source src="fortnite.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
-        window.onload = () => {
+        document.body.addEventListener('click', () => {
             const video = document.getElementById('video');
             const audio = document.getElementById('audio');
             
-            const playMedia = () => {
-                video.play().catch(err => console.warn('Video play failed:', err));
-                audio.play().catch(err => console.warn('Audio play failed:', err));
-            };
-            
-            playMedia();
-        };
+            video.play().catch(err => console.warn('Video play failed:', err));
+            audio.play().catch(err => console.warn('Audio play failed:', err));
+        }, { once: true });
     </script>
 </body>
 </html>
+
